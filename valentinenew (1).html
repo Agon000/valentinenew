@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine’s Day, Lyna</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffccd5, #ff6699);
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        .heart {
+            position: absolute;
+            top: 100%;
+            animation: floatHeart 6s ease-in-out infinite;
+            font-size: 40px;
+            opacity: 0.7;
+        }
+        @keyframes floatHeart {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.7;
+            }
+            50% {
+                transform: translateY(-200px) scale(1.3);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 0.7;
+            }
+        }
+        h1 {
+            font-size: 2.5em;
+            color: #ff6699;
+            animation: fadeIn 2s ease-in-out;
+            margin-top: 50px;
+        }
+        .content {
+            display: none;
+            font-size: 1.3em;
+            max-width: 800px;
+            margin: 50px auto;
+            line-height: 1.8;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+        }
+        .scroll-button {
+            margin-top: 30px;
+            padding: 12px 25px;
+            background-color: #ff6699;
+            border: none;
+            color: white;
+            font-size: 1.1em;
+            cursor: pointer;
+            animation: fadeIn 4s ease-in-out;
+        }
+        .fadeIn {
+            animation: fadeIn 3s ease-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* Heart animation variations */
+        .heart:nth-child(odd) {
+            left: 10%;
+            animation-duration: 7s;
+        }
+        .heart:nth-child(even) {
+            right: 10%;
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Hearts -->
+    <div class="heart" style="animation-delay: 0s;">❤️</div>
+    <div class="heart" style="animation-delay: 1s;">❤️</div>
+    <div class="heart" style="animation-delay: 2s;">❤️</div>
+    <div class="heart" style="animation-delay: 3s;">❤️</div>
+    <div class="heart" style="animation-delay: 4s;">❤️</div>
+
+    <h1>Happy Valentine’s Day, my beautiful Lyna</h1>
+
+    <button class="scroll-button" onclick="revealText()">Scroll to Reveal My Love</button>
+
+    <div id="content" class="content">
+        <p class="fadeIn">I wish more than anything that I could spend today with you, but even though we’re apart, I hope you know just how much I love and miss you. Being away from you is never easy, but it also makes me appreciate you even more. Every call, every text, every little moment we share means the world to me. You make all of this distance worth it, and I wouldn’t trade what we have for anything. I can’t wait for the day when I don’t have to miss you anymore, when I can finally hold you again instead of just wishing for it, but until then, just know that no matter how far we are, you’re always in my heart. I love you more than words can say, and I’m so lucky to have you.</p>
+
+        <p class="fadeIn">Happy Valentine’s Day, babe. Counting down the days until I see you again.</p>
+    </div>
+
+    <script>
+        function revealText() {
+            document.getElementById('content').style.display = 'block'; // Show the text content
+            setTimeout(function() {
+                document.getElementById('content').style.opacity = 1; // Fade in the text
+            }, 50); 
+            document.querySelector('.scroll-button').style.display = 'none'; // Hide the button after clicking
+            document.body.style.height = 'auto'; // Allow scrolling after button click
+        }
+    </script>
+</body>
+</html>
